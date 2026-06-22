@@ -1,3 +1,30 @@
-body { font-family: system-ui, sans-serif; margin: 2rem; }
-.proto-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-.widget { border: 1px solid #ccc; padding: 1rem; border-radius: 8px; }
+/* RESET */
+@import url("./elements/_reset.css");
+
+/* TOKENS */
+@import url("./tokens/_a11y.tokens.css");
+@import url("./tokens/_animation.tokens.css");
+@import url("./tokens/_aspect-ratio.tokens.css");
+@import url("./tokens/_border.tokens.css");
+@import url("./tokens/_border-radius.tokens.css");
+@import url("./tokens/_color.tokens.css");
+@import url("./tokens/_content.tokens.css");
+@import url("./tokens/_focus.tokens.css");
+@import url("./tokens/_form.tokens.css");
+@import url("./tokens/_icon.tokens.css");
+@import url("./tokens/_shadow.tokens.css");
+@import url("./tokens/_spacing.tokens.css");
+@import url("./tokens/_type.tokens.css");
+@import url("./tokens/_z-index.tokens.css");
+
+/* VARIABLES **/
+@import url("./variables/_colors.css");
+@import url("./variables/_type.css");
+
+/* ELEMENTS */
+@import url("./elements/_back-button.css");
+@import url("./elements/_fonts.css");
+@import url("./elements/_header.css");
+@import url("./elements/_main.css");
+@import url("./elements/_topbar.css");
+@import url("./elements/_type.css");

@@ -1,0 +1,10 @@
+:root {
+    /* FONT FAMILIES */
+    --font-family-headline: "Ubuntu", sans-serif;
+    --font-family-text: "Mulish", sans-serif;
+
+    /* FONT WEIGHTS */
+    --font-weight-text-normal: 600;
+    --font-weight-text-bold: 800;
+    --font-weight-headline: 600;
+}

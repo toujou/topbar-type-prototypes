@@ -1,0 +1,349 @@
+:root {
+    /* Fallback values for the font weight vars, needed when "Font set: Provided via CSS" is selected */
+    --font-weight-text-normal: normal;
+    --font-weight-text-bold: bold;
+    --font-weight-headline: bold;
+}
+
+h1,
+*[type-size="font--alpha"],
+.font--alpha {
+    --text-tag-font-size: var(--font-size-xxxl);
+    --text-tag-font-weight: var(--font-weight-headline);
+    --text-tag-line-height: var(--line-height-xs);
+    --text-tag-margin-bottom: var(--spacing-normal);
+
+    color: var(--color-primary);
+}
+
+h2,
+*[type-size="font--beta"],
+.font--beta {
+    --text-tag-font-size: var(--font-size-xxl);
+    --text-tag-font-weight: var(--font-weight-headline);
+    --text-tag-line-height: var(--line-height-xs);
+    --text-tag-margin-bottom: var(--spacing-normal);
+}
+
+h3,
+*[type-size="font--gamma"],
+.font--gamma {
+    --text-tag-font-size: var(--font-size-xl);
+    --text-tag-font-weight: var(--font-weight-headline);
+    --text-tag-line-height: var(--line-height-s);
+    --text-tag-margin-bottom: var(--spacing-normal);
+}
+
+h4,
+*[type-size="font--delta"],
+.font--delta {
+    --text-tag-font-size: var(--font-size-l);
+    --text-tag-font-weight: var(--font-weight-headline);
+    --text-tag-line-height: var(--line-height-s);
+    --text-tag-margin-bottom: var(--spacing-normal);
+}
+
+h5,
+*[type-size="font--epsilon"],
+.font--epsilon {
+    --text-tag-font-size: var(--font-size-m);
+    --text-tag-font-weight: var(--font-weight-headline);
+    --text-tag-line-height: var(--line-height-s);
+    --text-tag-margin-bottom: var(--spacing-normal);
+}
+
+h6,
+*[type-size="font--omega"],
+.font--omega {
+    --text-tag-font-size: var(--font-size-ms);
+    --text-tag-font-weight: var(--font-weight-headline);
+    --text-tag-line-height: var(--line-height-s);
+    --text-tag-margin-bottom: var(--spacing-normal);
+}
+
+*[type-size="s"],
+.font-size-s {
+    --text-tag-font-size: var(--font-size-s);
+    --text-tag-line-height: var(--line-height-s);
+}
+
+p,
+ul,
+ol,
+table {
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-text-normal);
+    line-height: var(--line-height-normal);
+    font-family: var(--font-family-text);
+    color: var(--color-font);
+}
+
+ul,
+ol {
+    padding-left: 1.1rem;
+    margin: var(--spacing-normal) 0 var(--spacing-normal);
+    list-style-position: outside;
+}
+
+:where(ul, ol) li::marker {
+    margin-right: var(--spacing-xxl);
+    display: inline-block;
+    width: 4rem;
+}
+
+main > :is(ul, ol) {
+    padding-left: var(--spacing-normal);
+}
+
+:is(ul, ol) :is(ul, ol) {
+    margin: 0 0 0 var(--spacing-l);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+*[type-size="font--alpha"],
+*[type-size="font--beta"],
+*[type-size="font--gamma"],
+*[type-size="font--delta"],
+*[type-size="font--epsilon"],
+*[type-size="font--omega"],
+.font--alpha,
+.font--beta,
+.font--gamma,
+.font--delta,
+.font--epsilon,
+.font--omega {
+    font-size: var(--text-tag-font-size);
+    font-weight: var(--text-tag-font-weight);
+    line-height: var(--text-tag-line-height);
+    margin-bottom: var(--text-tag-margin-bottom);
+    font-family: var(--font-family-headline);
+    color: var(--color-headline);
+    text-decoration: none;
+}
+
+/* stylelint-disable indentation */
+:is(main, .chapter) > :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    *[type-size="font--alpha"],
+    *[type-size="font--beta"],
+    *[type-size="font--gamma"],
+    *[type-size="font--delta"],
+    *[type-size="font--epsilon"],
+    *[type-size="font--omega"],
+    .font--alpha,
+    .font--beta,
+    .font--gamma,
+    .font--delta,
+    .font--epsilon,
+    .font--omega
+):not(:first-child),
+:is(main, .chapter) > ve-content-element > :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    *[type-size="font--alpha"],
+    *[type-size="font--beta"],
+    *[type-size="font--gamma"],
+    *[type-size="font--delta"],
+    *[type-size="font--epsilon"],
+    *[type-size="font--omega"],
+    .font--alpha,
+    .font--beta,
+    .font--gamma,
+    .font--delta,
+    .font--epsilon,
+    .font--omega
+):not(:first-child) {
+    margin-top: var(--spacing-between-consecutive-elements-normal);
+}
+
+:is(main, .chapter) > :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    *[type-size="font--alpha"],
+    *[type-size="font--beta"],
+    *[type-size="font--gamma"],
+    *[type-size="font--delta"],
+    *[type-size="font--epsilon"],
+    *[type-size="font--omega"],
+    .font--alpha,
+    .font--beta,
+    .font--gamma,
+    .font--delta,
+    .font--epsilon,
+    .font--omega
+):not(:first-child) + *,
+:is(main, .chapter) > ve-content-element > :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    *[type-size="font--alpha"],
+    *[type-size="font--beta"],
+    *[type-size="font--gamma"],
+    *[type-size="font--delta"],
+    *[type-size="font--epsilon"],
+    *[type-size="font--omega"],
+    .font--alpha,
+    .font--beta,
+    .font--gamma,
+    .font--delta,
+    .font--epsilon,
+    .font--omega
+):not(:first-child) + * {
+    margin-top: 0;
+}
+
+/* stylelint-enable indentation */
+*:not(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: var(--spacing-xl);
+}
+
+.grid-column > span:first-child + :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: 0;
+}
+
+:is(p, ul, ol:not(.breadcrumb__list)):last-child {
+    margin-bottom: 0;
+}
+
+p + :is(p, ul, ol) {
+    margin-top: var(--spacing-normal);
+}
+
+:is(h1, h2, h3, h4, h5, h6, p, ul, ol, table)[text-align="center"] {
+    text-align: center;
+}
+
+.grid-column :is(p, ul, ol):first-child {
+    margin-top: 0;
+}
+
+.teasertext {
+    font-weight: var(--font-weight-text-bold);
+}
+
+.infotext {
+    font-size: var(--font-size-ms);
+}
+
+.notes {
+    font-size: var(--font-size-s);
+}
+
+[type-weight="normal"] {
+    font-weight: var(--font-weight-text-normal);
+}
+
+[type-weight="bold"],
+strong {
+    font-weight: var(--font-weight-text-bold);
+}
+
+a {
+    color: var(--color-link);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+span,
+a {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+p > a.button {
+    display: inline-block;
+}
+
+a:not(.button):focus-visible {
+    color: var(--color-link-hover);
+}
+
+*[type-alignment="left"],
+.font--align-left {
+    text-align: left;
+}
+
+*[type-alignment="center"],
+.font--align-center {
+    text-align: center;
+}
+
+*[type-alignment="right"],
+.font--align-right {
+    text-align: right;
+}
+
+*[type-color="font--primary"],
+*[type-color="primary"],
+.font--primary {
+    color: var(--color-primary) !important;
+}
+
+*[type-color="font--secondary"],
+*[type-color="secondary"],
+.font--secondary {
+    color: var(--color-secondary) !important;
+}
+
+*[type-color="font--grey"],
+.font--grey {
+    color: var(--color-font-light) !important;
+}
+
+*[type-color="font-light"] {
+    color: var(--color-font-light) !important;
+}
+
+*[type-color="font--font"],
+*[type-color="font"],
+.font--font {
+    color: var(--color-font) !important;
+}
+
+*[type-color="warning"] {
+    color: var(--color-warning) !important;
+}
+
+/* stylelint-disable-next-line selector-no-vendor-prefix */
+a:-webkit-any-link:focus-visible {
+    outline: var(--focus-outline-width) solid var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+}
+
+/* stylelint-disable-next-line selector-no-vendor-prefix */
+.topbar[open-nav] a:-webkit-any-link:focus-visible {
+    --focus-outline-color: var(--color-bg);
+}
+
+@media (hover: hover) {
+    a:not(.button):hover {
+        color: var(--color-link-hover);
+    }
+}

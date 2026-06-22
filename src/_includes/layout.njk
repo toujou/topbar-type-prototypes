@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or "Prototype" }}</title>
-    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
 </head>
 <body>
-<header class="proto-header">
-    <a href="{{ '/' | url }}">← Home</a>
-    <h1>{{ title }}</h1>
-</header>
+    {% include "partials/topbar.njk" %}
+    {% include "partials/header.njk" %}
+    {% include "partials/main.njk" %}
 
-<main>
-    {{ content | safe }}
-</main>
-
-<script src="{{ '/js/script.js' | url }}"></script>
+    <script src="{{ '/js/script.js' | url }}"></script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+---
+layout: layout.njk
+title: Prototype Home
+pages:
+  - url: /test-a/
+    label: Test A — compact variant
+  - url: /test-b/
+    label: Test B — expanded variant
+---
+<ul class="proto-list">
+    {% for page in pages %}
+        <li><a href="{{ page.url | url }}">{{ page.label }}</a></li>
+    {% endfor %}
+</ul>

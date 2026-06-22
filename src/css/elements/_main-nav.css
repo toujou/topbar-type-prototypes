@@ -1,0 +1,27 @@
+.topbar[topbar-type="single-line"] .main-nav {
+    grid-area: mainnav;
+    justify-self: flex-end;
+}
+
+.topbar[topbar-type="logo-on-top"] .main-nav {
+    grid-area: mainnav;
+    justify-self: center;
+    width: fit-content;
+}
+
+.main-nav__list {
+    list-style: none;
+}
+
+.main-nav__link {
+    text-decoration: none;
+    line-height: 1;
+}
+
+.main-nav__list[data-nav-list-level="1"] {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--spacing-normal);
+    margin: 0;
+    padding: 0;
+}

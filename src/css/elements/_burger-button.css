@@ -1,0 +1,4 @@
+.topbar[topbar-type="logo-on-top"] .burger-button,
+.topbar[topbar-type="single-line"] .burger-button {
+    display: none;
+}

@@ -1,0 +1,116 @@
+.icon {
+    --icon-size: var(--icon-size-normal);
+    --icon-color: currentColor;
+    --icon-flex-shrink: 0;
+
+    display: inline-block;
+    flex-shrink: var(--icon-flex-shrink);
+    height: var(--icon-size);
+    width: var(--icon-size);
+    background-color: var(--icon-color);
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+/* ICON COLORS */
+.icon[icon-color="font"] {
+    --icon-color: var(--color-font);
+}
+
+.icon[icon-color="font-dark"] {
+    --icon-color: var(--color-font-dark);
+}
+
+.icon[icon-color="font-light"] {
+    --icon-color: var(--color-font-light);
+}
+
+.icon[icon-color="primary"] {
+    --icon-color: var(--color-primary);
+}
+
+.icon[icon-color="primary-light"] {
+    --icon-color: var(--color-primary-light);
+}
+
+.icon[icon-color="primary-dark"] {
+    --icon-color: var(--color-primary-dark);
+}
+
+.icon[icon-color="secondary"] {
+    --icon-color: var(--color-secondary);
+}
+
+.icon[icon-color="secondary-light"] {
+    --icon-color: var(--color-secondary-light);
+}
+
+.icon[icon-color="secondary-dark"] {
+    --icon-color: var(--color-secondary-dark);
+}
+
+.icon[icon-color="background"] {
+    --icon-color: var(--color-bg);
+}
+
+.icon[icon-color="success"] {
+    --icon-color: var(--color-success);
+}
+
+.icon[icon-color="warning"] {
+    --icon-color: var(--color-warning);
+}
+
+.icon[icon-color="error"] {
+    --icon-color: var(--color-error);
+}
+
+/* ICON SIZES */
+.icon[icon-size="xxxl"] {
+    --icon-size: var(--font-size-xxxl);
+}
+
+.icon[icon-size="xxl"] {
+    --icon-size: var(--font-size-xxl);
+}
+
+.icon[icon-size="xl"] {
+    --icon-size: var(--font-size-xl);
+}
+
+.icon[icon-size="l"] {
+    --icon-size: var(--font-size-l);
+}
+
+.icon[icon-size="m"] {
+    --icon-size: var(--font-size-m);
+}
+
+.icon[icon-size="ms"] {
+    --icon-size: var(--font-size-ms);
+}
+
+.icon[icon-size="normal"] {
+    --icon-size: var(--font-size-normal);
+}
+
+.icon[icon-size="s"] {
+    --icon-size: var(--font-size-s);
+}
+
+.icon[icon-size="xs"] {
+    --icon-size: var(--font-size-xs);
+}
+
+.icon[icon-size="xxs"] {
+    --icon-size: var(--font-size-xxs);
+}
+
+/* ICON IMAGES */
+.icon[icon-name="email"] {
+    mask-image: var(--icon-email);
+}

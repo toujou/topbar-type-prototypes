@@ -1,0 +1,7 @@
+.proto-list {
+    font-size: var(--font-size-ms);
+}
+
+.proto-list:not(:last-child) {
+    margin-bottom: var(--spacing-xl);
+}

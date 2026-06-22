@@ -1,0 +1,20 @@
+.topbar[topbar-type="single-line"] .language-picker,
+.topbar[topbar-type="logo-on-top"] .language-picker {
+    grid-area: languagepicker;
+    width: fit-content;
+}
+
+.language-picker__list {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--spacing-normal);
+    margin: 0;
+    padding: 0;
+}
+
+
+.language-picker__link {
+    text-decoration: none;
+    line-height: 1;
+}

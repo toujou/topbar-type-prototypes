@@ -8,12 +8,13 @@
 </head>
 <body>
 
-    {% if not hideTopbar %}
-        {% include "partials/topbar.njk" %}
-    {% endif %}
-    {% include "partials/header.njk" %}
-    {% include "partials/main.njk" %}
+<h1>PROT</h1>
+{% if not hideTopbar %}
+    {% include "partials/topbar.njk" %}
+{% endif %}
+{% include "partials/header.njk" %}
+{% include "partials/main.njk" %}
 
-    <script src="{{ '/js/script.js' | url }}"></script>
+<script src="{{ '/js/script.js' | url }}"></script>
 </body>
 </html>

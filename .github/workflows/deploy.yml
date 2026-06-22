@@ -20,7 +20,7 @@ jobs:
       - run: npm install
       - run: npx @11ty/eleventy
         env:
-          PATH_PREFIX: toujou/topbar-type-prototypes
+          PATH_PREFIX: /topbar-type-prototypes
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

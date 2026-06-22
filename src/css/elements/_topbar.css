@@ -1,4 +1,13 @@
-.topbar {
-    display: block;
-    border: 2px solid red;
+/*.topbar {*/
+/*    display: block;*/
+/*    border: 2px solid red;*/
+/*}*/
+
+.topbar__actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--spacing-normal);
 }

@@ -2,4 +2,9 @@
     width: var(--content-width-with-padding);
     max-width: var(--content-max-width);
     margin: 0 auto;
+    z-index: var(--z-index-content);
+}
+
+.main:first-child {
+    padding-top: var(--spacing-xl);
 }

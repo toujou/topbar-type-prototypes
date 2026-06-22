@@ -3,3 +3,7 @@
     max-width: var(--content-max-width);
     margin: 0 auto;
 }
+
+.topbar + .header {
+    margin-top: var(--spacing-xl);
+}

@@ -4,20 +4,21 @@
     role="region"
     aria-label="topbar"
     logo-size="medium"
+    topbar-type="{{ topbarType }}"
 >
     <nav aria-label="Topbar Logo" style="display: contents;">
         <a aria-label="Zur Startseite" show-title-on-mobile="false" class="topbar__logo-link" href="/">
             <span class="topbar__title">Meet Kojo</span>
-            <img class="topbar__logo" title="Meet Kojo" src="{{ '/assets/images/logo.svg' | url }}" width="327" height="149" alt="">
+            <img class="topbar__logo" title="Meet Kojo" src="{{ '/assets/images/logo.svg' | url }}" alt="Logo">
         </a>
     </nav>
 
     <ul class="topbar__actions" aria-label="Aktionen">
         <li class="topbar__actions-item">
-            <label for="contact-state" class="topbar__actions-link" aria-label="Kontaktieren Sie uns" role="button" tabindex="0">
+            <a href="#" class="topbar__actions-link" aria-label="Kontaktieren Sie uns" role="button" tabindex="0">
                 <span class="topbar__actions-text">Kontaktieren Sie uns</span>
                 <toujou-icon icon-name="email" icon-color="font" icon-size="xl" class="icon"></toujou-icon>
-            </label>
+            </a>
         </li>
     </ul>
 
@@ -31,12 +32,12 @@
     <nav class="language-picker" aria-label="Sprachauswahl">
         <ul class="language-picker__list">
             <li class="language-picker__item">
-                <a href="/" class="language-picker__link" lang="de" hreflang="de-DE" aria-label="Deutsch" aria-current="true">
+                <a href="#" class="language-picker__link" lang="de" hreflang="de-DE" aria-label="Deutsch" aria-current="true">
                     <span class="language-picker__iso-code">DE</span>
                 </a>
             </li>
             <li class="language-picker__item">
-                <a href="/en/" class="language-picker__link" lang="en" hreflang="en-US" aria-label="English">
+                <a href="#" class="language-picker__link" lang="en" hreflang="en-US" aria-label="English">
                     <span class="language-picker__iso-code">EN</span>
                 </a>
             </li>
@@ -46,17 +47,17 @@
     <nav id="mainNavigation" class="main-nav" aria-label="Main navigation">
         <ul class="main-nav__list" data-nav-list-level="1">
             <li class="main-nav__list-item" page-uid="500" data-nav-item-level="1" page-designation="">
-                <a page-uid="500" class="main-nav__link main-nav__link--500-page-uid" href="/flexibilitaet/">
+                <a page-uid="500" class="main-nav__link main-nav__link--500-page-uid" href="#">
                     <span class="main-nav__text" id="label_500">Flexibilität</span>
                 </a>
             </li>
             <li class="main-nav__list-item" page-uid="501" data-nav-item-level="1" page-designation="">
-                <a page-uid="501" class="main-nav__link main-nav__link--501-page-uid" href="/barrierefreiheit/">
+                <a page-uid="501" class="main-nav__link main-nav__link--501-page-uid" href="#">
                     <span class="main-nav__text" id="label_501">Barrierefreiheit</span>
                 </a>
             </li>
             <li class="main-nav__list-item" page-uid="502" data-nav-item-level="1" page-designation="">
-                <a page-uid="502" class="main-nav__link main-nav__link--502-page-uid" href="/performance/">
+                <a page-uid="502" class="main-nav__link main-nav__link--502-page-uid" href="#">
                     <span class="main-nav__text" id="label_502">Performance</span>
                 </a>
             </li>
@@ -64,16 +65,16 @@
     </nav>
 
     <nav class="service-nav" aria-label="Service navigation">
-        <a page-designation="" class="service-nav__link" href="/kontakt/">
+        <a page-designation="" class="service-nav__link" href="#">
             Kontakt
         </a>
-        <a page-designation="" class="service-nav__link" href="/impressum/">
+        <a page-designation="" class="service-nav__link" href="#">
             Impressum
         </a>
-        <a page-designation="" class="service-nav__link" href="/datenschutz/">
+        <a page-designation="" class="service-nav__link" href="#">
             Datenschutz
         </a>
-        <a page-designation="" class="service-nav__link" href="/barrierefreiheitserklaerung/">
+        <a page-designation="" class="service-nav__link" href="#">
             Barrierefreiheitserklärung
         </a>
     </nav>

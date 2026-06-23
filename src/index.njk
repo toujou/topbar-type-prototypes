@@ -7,10 +7,4 @@ title: Topbar and Nav Types Prototypes
 
 <p>Prototypes of different topbar and main navigation styles so we compare options like a single-line or logo-on-top topbar, or a mega menu or dropdown navigation.</p>
 
-<h2>Topbar types</h2>
-
-<ul class="proto-list">
-    {% for page in pages %}
-        <li><a href="{{ page.url | url }}">{{ page.label }}</a></li>
-    {% endfor %}
-</ul>
+{% include "partials/other-topbar-types.njk" %}

@@ -1,8 +1,18 @@
-<h4>Other topbar types</h4>
+{% if page.url == "/" %}
+    <h2>Topbar Types</h2>
+{% else %}
+    <h4>Other topbar types</h4>
+{% endif %}
+
 <ul class="proto-list">
     {% for item in pages %}
         {% if item.url != page.url %}
-            <li><a href="{{ item.url | url }}">{{ item.label }}</a></li>
+            <li class="proto-list__item">
+                <a class="proto-list__link" href="{{ item.url | url }}">
+                    <img src="{{ item.mockupImage }}" alt="" class="proto-list__image">
+                    <span class="proto-list__title">{{ item.label }}</span>
+                </a>
+            </li>
         {% endif %}
     {% endfor %}
 </ul>

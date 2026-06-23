@@ -23,6 +23,7 @@
 
 /* ELEMENTS */
 @import url("./elements/_back-button.css");
+@import url("./elements/_body.css");
 @import url("./elements/_burger-button.css");
 @import url("./elements/_fonts.css");
 @import url("./elements/_header.css");

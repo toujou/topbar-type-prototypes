@@ -1,0 +1,60 @@
+.topbar[topbar-type="bottom-actions-bar"] {
+    --topbar-logo-width: 160px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas: "logo mainnav languagepicker";
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-l);
+    box-shadow: var(--shadow-s);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-topbar);
+    background-color: var(--color-bg);
+
+    .topbar__title {
+        display: none;
+    }
+
+    .topbar__logo-link {
+        grid-area: logo;
+    }
+
+    .topbar__logo {
+        max-width: var(--topbar-logo-width);
+    }
+
+    .topbar__actions {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--color-bg);
+        padding: var(--spacing-normal);
+        display: flex;
+        flex-flow: row nowrap;
+        gap: var(--spacing-xl);
+        justify-content: center;
+        box-shadow: var(--shadow-s);
+    }
+
+    .topbar__actions-link {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        gap: var(--spacing-s);
+        align-items: center;
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    .topbar__actions-link .icon {
+        --icon-color: var(--color-primary);
+        --icon-size: var(--font-size-m);
+    }
+
+    .topbar__actions {
+        grid-area: actions;
+    }
+}

@@ -8,3 +8,7 @@
 .main:first-child {
     padding-top: var(--spacing-xl);
 }
+
+body:has(.topbar[topbar-type="bottom-actions-bar"]) .main {
+    padding-bottom: 100px;
+}

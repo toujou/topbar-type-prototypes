@@ -14,4 +14,9 @@ module.exports = [
         label: "Topbar with burger button",
         mockupImage: "/assets/images/mockups/topbar-with-burger-button.svg"
     },
+    {
+        url: "/topbar-with-bottom-actions-bar/",
+        label: "Topbar with bottom actions bar",
+        mockupImage: "/assets/images/mockups/topbar-with-bottom-actions-bar.svg"
+    },
 ];

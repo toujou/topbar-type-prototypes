@@ -114,3 +114,7 @@
 .icon[icon-name="email"] {
     mask-image: var(--icon-email);
 }
+
+.icon[icon-name="search"] {
+    mask-image: var(--icon-search);
+}

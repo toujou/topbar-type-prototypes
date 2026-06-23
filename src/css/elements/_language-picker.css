@@ -4,6 +4,10 @@
     width: fit-content;
 }
 
+.topbar[topbar-type="burger-button"] .language-picker {
+    display: none;
+}
+
 .language-picker__list {
     list-style: none;
     display: flex;

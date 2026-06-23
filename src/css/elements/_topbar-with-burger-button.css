@@ -1,0 +1,58 @@
+.topbar[topbar-type="burger-button"] {
+    --topbar-logo-width: 160px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-rows: auto ;
+    grid-template-areas:
+        "logo . actions burgerbutton";
+    align-items: center;
+    gap: var(--spacing-l);
+    padding: var(--spacing-l);
+    box-shadow: var(--shadow-s);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-topbar);
+    background-color: var(--color-bg);
+
+    .topbar__title {
+        display: none;
+    }
+
+    .topbar__logo-link {
+        grid-area: logo;
+    }
+
+    .topbar__logo-link {
+        max-width: 100%;
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+    .topbar__actions {
+        grid-area: actions;
+        width: fit-content;
+    }
+
+    .topbar__actions-link {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: var(--spacing-s);
+        align-items: center;
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    .topbar__actions-text {
+        display: none;
+    }
+
+    .topbar__actions-link .icon {
+        --icon-color: var(--color-primary);
+        --icon-size: var(--font-size-m);
+    }
+
+    .topbar__actions {
+        grid-area: actions;
+    }
+}

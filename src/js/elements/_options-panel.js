@@ -1,8 +1,12 @@
 /**
  * Controls the options panel: listens for radio button changes
- * and reflects the selected values onto the topbar attributes
+ * and reflects the selected values onto the topbar attributes.
+ * Selections are persisted to localStorage and restored on page load.
  */
 class OptionsPanel {
+    /** @type {string} localStorage key used to persist the panel's state */
+    static storageKey = 'options-panel-state';
+
     /** @type {string|null} Currently selected topbar type */
     #selectedTopbarType;
 
@@ -27,13 +31,15 @@ class OptionsPanel {
     constructor(el) {
         this.el = el;
         this.#selectedTopbarType = null;
+        this.#selectedNavigationType = null;
 
         this.#init();
     }
 
     /**
      * Finds the topbar, binds change listeners to each radio input,
-     * and syncs the UI to whichever option is checked by default.
+     * and syncs the UI to the stored state (if any) or whichever
+     * option is checked by default.
      */
     #init = () => {
         this.#topbar = document.querySelector('.topbar');
@@ -50,51 +56,116 @@ class OptionsPanel {
             input.addEventListener('change', this.#onNavigationTypeChange);
         });
 
-        this.#syncInitialState();
+        this.#restoreState();
     };
 
     /**
-     * Reads whichever radio is checked on 'load' and applies it immediately,
-     * so the topbar matches the panel's default selection from the start.
+     * Reads any previously saved state from localStorage and applies it,
+     * checking the matching radio inputs. Falls back to whichever options
+     * are checked by default in the markup if there's nothing stored yet
+     * (or if storage isn't available).
      */
-    #syncInitialState = () => {
-        const checkedTopbarTypeOption = this.el.querySelector('input[name="topbar-type"]:checked');
-        if (checkedTopbarTypeOption) {
-            this.#selectedTopbarType = checkedTopbarTypeOption.value;
-            this.#updateUI();
+    #restoreState = () => {
+        const storedState = this.#readStoredState();
+
+        if (storedState?.topbarType) {
+            this.#selectedTopbarType = storedState.topbarType;
+            this.#checkInput(this.#topbarTypeInputs, storedState.topbarType);
+        } else {
+            const checkedTopbarTypeOption = this.el.querySelector('input[name="topbar-type"]:checked');
+            if (checkedTopbarTypeOption) {
+                this.#selectedTopbarType = checkedTopbarTypeOption.value;
+            }
         }
 
-        const checkedNavigationTypeOption = this.el.querySelector('input[name="navigation-type"]:checked');
-        if (checkedNavigationTypeOption) {
-            this.#selectedNavigationType = checkedNavigationTypeOption.value;
-            this.#updateUI();
+        if (storedState?.navigationType) {
+            this.#selectedNavigationType = storedState.navigationType;
+            this.#checkInput(this.#navigationTypeInputs, storedState.navigationType);
+        } else {
+            const checkedNavigationTypeOption = this.el.querySelector('input[name="navigation-type"]:checked');
+            if (checkedNavigationTypeOption) {
+                this.#selectedNavigationType = checkedNavigationTypeOption.value;
+            }
+        }
+
+        this.#updateUI();
+    };
+
+    /**
+     * Checks whichever radio input in a list matches the given value.
+     * @param {NodeListOf<HTMLInputElement>} inputs
+     * @param {string} value
+     */
+    #checkInput = (inputs, value) => {
+        inputs.forEach((input) => {
+            input.checked = input.value === value;
+        });
+    };
+
+    /**
+     * Reads and parses the saved state from localStorage.
+     * @returns {{topbarType?: string, navigationType?: string}|null}
+     */
+    #readStoredState = () => {
+        try {
+            const raw = localStorage.getItem(OptionsPanel.storageKey);
+            return raw ? JSON.parse(raw) : null;
+        } catch (error) {
+            console.warn('TOUJOU: Could not read options panel state from localStorage.', error);
+            return null;
         }
     };
 
     /**
-     * Handles a topbarType radio change event by updating the selected type and UI
+     * Persists the current selection to localStorage.
+     */
+    #saveState = () => {
+        try {
+            localStorage.setItem(
+                OptionsPanel.storageKey,
+                JSON.stringify({
+                    topbarType: this.#selectedTopbarType,
+                    navigationType: this.#selectedNavigationType
+                })
+            );
+        } catch (error) {
+            console.warn('TOUJOU: Could not save options panel state to localStorage.', error);
+        }
+    };
+
+    /**
+     * Handles a topbarType radio change event by updating the selected
+     * type, re-rendering the UI, and persisting the new state.
      * @param {Event} event
      */
     #onTopbarTypeChange = (event) => {
         this.#selectedTopbarType = event.target.value;
         this.#updateUI();
+        this.#saveState();
     };
 
     /**
-     * Handles a navigationType radio change event by updating the selected type and UI
+     * Handles a navigationType radio change event by updating the selected
+     * type, re-rendering the UI, and persisting the new state.
      * @param {Event} event
      */
     #onNavigationTypeChange = (event) => {
         this.#selectedNavigationType = event.target.value;
         this.#updateUI();
+        this.#saveState();
     };
 
     /**
-     * updates the UI by setting the correct attribute values on the topbar
+     * Updates the UI by setting the correct attribute values on the topbar
+     * and main navigation elements.
      */
     #updateUI = () => {
-        this.#topbar?.setAttribute('topbar-type', this.#selectedTopbarType);
-        this.#mainNav?.setAttribute('main-nav-type', this.#selectedNavigationType);
+        if (this.#selectedTopbarType) {
+            this.#topbar?.setAttribute('topbar-type', this.#selectedTopbarType);
+        }
+        if (this.#selectedNavigationType) {
+            this.#mainNav?.setAttribute('main-nav-type', this.#selectedNavigationType);
+        }
     };
 }
 

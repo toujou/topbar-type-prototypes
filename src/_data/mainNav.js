@@ -1,53 +1,60 @@
-// module.exports = [
-//     {
-//         uid: 1,
-//         label: "Recipes",
-//         url: "#",
-//         children: [
-//             {
-//                 uid: 514,
-//                 label: "Weitere Unterseite",
-//                 url: "/musterseite/weitere-unterseite/",
-//                 children: [
-//                     {
-//                         uid: 538,
-//                         label: "Weitere Unterseite Level 3 auch mit sehr langen Titel",
-//                         url: "/musterseite/weitere-unterseite/weitere-unterseite-level-3/",
-//                         children: []
-//                     },
-//                     {
-//                         uid: 616,
-//                         label: "Weitere Unterseite Level 3 2",
-//                         url: "/musterseite/weitere-unterseite/weitere-unterseite-level-3-2/",
-//                         children: []
-//                     }
-//                 ]
-//             },
-//             {
-//                 uid: 515,
-//                 label: "Unterseite mit wesentlich längerem Titel",
-//                 url: "/musterseite/unterseite-mit-wesentlich-laengerem-titel/",
-//                 children: []
-//             },
-//             {
-//                 uid: 617,
-//                 label: "Unterseite Level 2",
-//                 url: "/musterseite/unterseite-level-2/",
-//                 children: []
-//             }
-//         ]
-//     },
-//     { uid: 2, label: "Explore", url: "#", children: [] },
-//     { uid: 3, label: "Products", url: "#", children: [] },
-//     { uid: 4, label: "About", url: "#", children: [] }
-// ];
-
 module.exports = [
     {
         uid: 1,
         label: "Missions",
         url: "#",
-        children: []
+        children: [
+            {
+                uid: 701,
+                label: "Active Missions",
+                url: "/missions/active/",
+                children: [
+                    {
+                        uid: 711,
+                        label: "Artemis Lunar Program",
+                        url: "/missions/active/artemis/",
+                        children: []
+                    },
+                    {
+                        uid: 712,
+                        label: "Mars Sample Return",
+                        url: "/missions/active/mars-sample-return/",
+                        children: []
+                    }
+                ]
+            },
+            {
+                uid: 702,
+                label: "Past Missions",
+                url: "/missions/past/",
+                children: [
+                    {
+                        uid: 713,
+                        label: "Apollo Program",
+                        url: "/missions/past/apollo/",
+                        children: []
+                    },
+                    {
+                        uid: 714,
+                        label: "Space Shuttle Program",
+                        url: "/missions/past/space-shuttle/",
+                        children: []
+                    },
+                    {
+                        uid: 715,
+                        label: "Voyager 1 and 2",
+                        url: "/missions/past/voyager/",
+                        children: []
+                    }
+                ]
+            },
+            {
+                uid: 703,
+                label: "Upcoming Launches",
+                url: "/missions/upcoming/",
+                children: []
+            }
+        ]
     },
     {
         uid: 2,
@@ -70,6 +77,12 @@ module.exports = [
                         label: "Outer Planets and Gas Giants",
                         url: "/explore/solar-system/outer-planets/",
                         children: []
+                    },
+                    {
+                        uid: 621,
+                        label: "Moons and Dwarf Planets",
+                        url: "/explore/solar-system/moons-and-dwarf-planets/",
+                        children: []
                     }
                 ]
             },
@@ -77,7 +90,20 @@ module.exports = [
                 uid: 515,
                 label: "Galaxies and Deep Space",
                 url: "/explore/galaxies-and-deep-space/",
-                children: []
+                children: [
+                    {
+                        uid: 622,
+                        label: "The Milky Way",
+                        url: "/explore/galaxies-and-deep-space/milky-way/",
+                        children: []
+                    },
+                    {
+                        uid: 623,
+                        label: "Nebulae and Star Clusters",
+                        url: "/explore/galaxies-and-deep-space/nebulae-and-star-clusters/",
+                        children: []
+                    }
+                ]
             },
             {
                 uid: 617,
@@ -89,7 +115,20 @@ module.exports = [
                 uid: 618,
                 label: "Exoplanets",
                 url: "/explore/exoplanets/",
-                children: []
+                children: [
+                    {
+                        uid: 624,
+                        label: "Habitable Zone Planets",
+                        url: "/explore/exoplanets/habitable-zone/",
+                        children: []
+                    },
+                    {
+                        uid: 625,
+                        label: "Exoplanet Detection Methods",
+                        url: "/explore/exoplanets/detection-methods/",
+                        children: []
+                    }
+                ]
             },
             {
                 uid: 619,

@@ -1,19 +1,21 @@
-<nav id="mainNavigation" class="main-nav" aria-label="Main navigation">
-    <ul class="main-nav__list" data-nav-list-level="1">
-        <li class="main-nav__list-item" page-uid="500" data-nav-item-level="1" page-designation="">
-            <a page-uid="500" class="main-nav__link main-nav__link--500-page-uid" href="#">
-                <span class="main-nav__text" id="label_500">Flexibilität</span>
-            </a>
-        </li>
-        <li class="main-nav__list-item" page-uid="501" data-nav-item-level="1" page-designation="">
-            <a page-uid="501" class="main-nav__link main-nav__link--501-page-uid" href="#">
-                <span class="main-nav__text" id="label_501">Barrierefreiheit</span>
-            </a>
-        </li>
-        <li class="main-nav__list-item" page-uid="502" data-nav-item-level="1" page-designation="">
-            <a page-uid="502" class="main-nav__link main-nav__link--502-page-uid" href="#">
-                <span class="main-nav__text" id="label_502">Performance</span>
-            </a>
-        </li>
+{% macro renderNavList(items, level, parentUid) %}
+    <ul class="main-nav__list" data-nav-list-level="{{ level }}"{% if level > 1 %} aria-labelledby="label_{{ parentUid }}"{% endif %}>
+        {% for item in items %}
+            <li class="main-nav__list-item" page-uid="{{ item.uid }}" data-nav-item-level="{{ level }}" page-designation="" {% if item.children.length %}data-has-subnav{% endif %}>
+                <a page-uid="{{ item.uid }}" class="main-nav__link main-nav__link--{{ item.uid }}-page-uid" href="{{ item.url }}">
+                    <span class="main-nav__text" id="label_{{ item.uid }}">{{ item.label }}</span>
+                </a>
+                {% if item.children.length %}
+                    <button class="main-nav__chevron" aria-label="Untermenü auf-/zuklappen" aria-controls="nav_{{ item.uid }}" aria-expanded="false" aria-pressed="false">
+                        <toujou-icon class="icon" icon-name="chevron-down" icon-color="background" icon-size="l"></toujou-icon>
+                    </button>
+                    {{ renderNavList(item.children, level + 1, item.uid) }}
+                {% endif %}
+            </li>
+        {% endfor %}
     </ul>
+{% endmacro %}
+
+<nav id="mainNavigation" class="main-nav" aria-label="Main navigation" main-nav-type="dropdown">
+    {{ renderNavList(mainNav, 1) }}
 </nav>

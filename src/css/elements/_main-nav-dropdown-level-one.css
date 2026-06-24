@@ -1,0 +1,21 @@
+.main-nav[main-nav-type="dropdown"] {
+    .main-nav__list[data-nav-list-level="1"] {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: var(--spacing-l);
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-nav__list-item[data-nav-item-level="1"] {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: var(--spacing-s);
+        position: relative;
+    }
+
+    .main-nav__link {
+        text-decoration: none;
+    }
+}

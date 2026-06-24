@@ -111,6 +111,10 @@
 }
 
 /* ICON IMAGES */
+.icon[icon-name="chevron-down"] {
+    mask-image: var(--icon-chevron-down);
+}
+
 .icon[icon-name="email"] {
     mask-image: var(--icon-email);
 }

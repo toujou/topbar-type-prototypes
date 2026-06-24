@@ -1,0 +1,26 @@
+.main-nav[main-nav-type="dropdown"] {
+    .main-nav__list[data-nav-list-level="2"] {
+        display: none;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-s);
+        position: absolute;
+        top: 100%;
+        margin: var(--spacing-normal) 0 0;
+        padding: var(--spacing-normal);
+        left: 0;
+        width: 240px;
+        background-color: var(--color-bg);
+        box-shadow: var(--shadow-s);
+        border-radius: var(--border-radius-normal);
+    }
+
+    .main-nav__list-item[data-nav-item-level="1"][data-is-open] > .main-nav__list[data-nav-list-level="2"] {
+        display: grid;
+    }
+
+    .main-nav__list-item[data-nav-item-level="2"] {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+}

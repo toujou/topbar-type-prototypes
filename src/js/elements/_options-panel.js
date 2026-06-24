@@ -6,11 +6,20 @@ class OptionsPanel {
     /** @type {string|null} Currently selected topbar type */
     #selectedTopbarType;
 
-    /** @type {NodeListOf<HTMLInputElement>} Radio inputs for topbar type */
+    /** @type {NodeListOf<HTMLInputElement>} Radio inputs for the topbar type options */
     #topbarTypeInputs;
+
+    /** @type {string|null} Currently selected navigation type */
+    #selectedNavigationType;
+
+    /** @type {NodeListOf<HTMLInputElement>} Radio inputs for the navigation type options */
+    #navigationTypeInputs;
 
     /** @type {HTMLElement|null} The topbar element this panel controls */
     #topbar;
+
+    /** @type {HTMLElement|null} The main-nav element this panel controls */
+    #mainNav;
 
     /**
      * @param {HTMLElement} el - The root element of the options panel
@@ -28,11 +37,17 @@ class OptionsPanel {
      */
     #init = () => {
         this.#topbar = document.querySelector('.topbar');
+        this.#mainNav = document.querySelector('.main-nav');
 
         this.#topbarTypeInputs = this.el.querySelectorAll('input[name="topbar-type"]');
+        this.#navigationTypeInputs = this.el.querySelectorAll('input[name="navigation-type"]');
 
         this.#topbarTypeInputs.forEach((input) => {
             input.addEventListener('change', this.#onTopbarTypeChange);
+        });
+
+        this.#navigationTypeInputs.forEach((input) => {
+            input.addEventListener('change', this.#onNavigationTypeChange);
         });
 
         this.#syncInitialState();
@@ -43,9 +58,15 @@ class OptionsPanel {
      * so the topbar matches the panel's default selection from the start.
      */
     #syncInitialState = () => {
-        const checked = this.el.querySelector('input[name="topbar-type"]:checked');
-        if (checked) {
-            this.#selectedTopbarType = checked.value;
+        const checkedTopbarTypeOption = this.el.querySelector('input[name="topbar-type"]:checked');
+        if (checkedTopbarTypeOption) {
+            this.#selectedTopbarType = checkedTopbarTypeOption.value;
+            this.#updateUI();
+        }
+
+        const checkedNavigationTypeOption = this.el.querySelector('input[name="navigation-type"]:checked');
+        if (checkedNavigationTypeOption) {
+            this.#selectedNavigationType = checkedNavigationTypeOption.value;
             this.#updateUI();
         }
     };
@@ -60,10 +81,20 @@ class OptionsPanel {
     };
 
     /**
+     * Handles a navigationType radio change event by updating the selected type and UI
+     * @param {Event} event
+     */
+    #onNavigationTypeChange = (event) => {
+        this.#selectedNavigationType = event.target.value;
+        this.#updateUI();
+    };
+
+    /**
      * updates the UI by setting the correct attribute values on the topbar
      */
     #updateUI = () => {
         this.#topbar?.setAttribute('topbar-type', this.#selectedTopbarType);
+        this.#mainNav?.setAttribute('main-nav-type', this.#selectedNavigationType);
     };
 }
 

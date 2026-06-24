@@ -28,7 +28,6 @@
 @import url("./elements/_icon.css");
 @import url("./elements/_language-picker.css");
 @import url("./elements/_main.css");
-@import url("./elements/_main-nav.css");
 @import url("./elements/_options-panel.css");
 @import url("./elements/_service-nav.css");
 @import url("./elements/_topbar.css");
@@ -41,4 +40,9 @@
 @import url("./elements/_topbar-with-bottom-actions-bar.css");
 @import url("./elements/_topbar-with-burger-button.css");
 
+/* MAIN NAV */
+@import url("./elements/_main-nav.css");
+@import url("./elements/_main-nav-dropdown-level-one.css");
+@import url("./elements/_main-nav-dropdown-level-two.css");
+@import url("./elements/_main-nav-dropdown-level-three.css");
 

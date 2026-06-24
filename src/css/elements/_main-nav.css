@@ -1,10 +1,12 @@
-.topbar[topbar-type="single-line"] .main-nav {
+.main-nav {
     grid-area: mainnav;
+}
+
+.topbar[topbar-type="single-line"] .main-nav {
     justify-self: flex-end;
 }
 
 .topbar[topbar-type="logo-on-top"] .main-nav {
-    grid-area: mainnav;
     justify-self: center;
     width: fit-content;
 }
@@ -17,15 +19,23 @@
     list-style: none;
 }
 
-.main-nav__link {
-    text-decoration: none;
-    line-height: 1;
+.main-nav__chevron {
+    border: none;
+    background-color: transparent;
+    height: var(--spacing-normal);
+    width: var(--spacing-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    transition: rotate var(--animation-duration-fast) ease-in-out;
 }
 
-.main-nav__list[data-nav-list-level="1"] {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: var(--spacing-normal);
-    margin: 0;
-    padding: 0;
+.main-nav__list-item[data-is-open] > .main-nav__chevron {
+    rotate: -180deg;
+}
+
+.main-nav__chevron .icon {
+    background-color: var(--color-primary);
 }

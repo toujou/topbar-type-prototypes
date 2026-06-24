@@ -1,5 +1,4 @@
-.topbar[topbar-type="single-line"] .language-picker,
-.topbar[topbar-type="logo-on-top"] .language-picker {
+.language-picker {
     grid-area: languagepicker;
     width: fit-content;
 }

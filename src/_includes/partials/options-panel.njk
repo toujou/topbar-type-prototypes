@@ -1,0 +1,35 @@
+<div class="options-panel">
+    <fieldset class="options-panel__fieldset" data-options-type="topbar-type">
+        <legend class="options-panel__legend">Topbar type</legend>
+        {% for type in topbarTypes %}
+            <label class="options-panel__label">
+                <input
+                        type="radio"
+                        name="topbar-type"
+                        class="options-panel__input"
+                        value="{{ type.id }}"
+                        {% if loop.first %}checked{% endif %}
+                >
+                {{ type.label }}
+            </label>
+        {% endfor %}
+    </fieldset>
+
+    <!--
+    <fieldset class="options-panel__fieldset" data-options-type="topbar-type">
+        <legend class="options-panel__legend">Navigation type</legend>
+        {% for type in navigationTypes %}
+            <label class="options-panel__label">
+                <input
+                        type="radio"
+                        name="navigation-type"
+                        class="options-panel__input"
+                        value="{{ type.id }}"
+                        {% if loop.first %}checked{% endif %}
+                >
+                {{ type.label }}
+            </label>
+        {% endfor %}
+    </fieldset>
+    -->
+</div>

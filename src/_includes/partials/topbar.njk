@@ -6,82 +6,10 @@
     logo-size="medium"
     topbar-type="{{ topbarType }}"
 >
-    <nav aria-label="Topbar Logo" style="display: contents;">
-        <a aria-label="Zur Startseite" show-title-on-mobile="false" class="topbar__logo-link" href="/">
-            <span class="topbar__title">Meet Kojo</span>
-            <img class="topbar__logo" title="Meet Kojo" src="{{ '/assets/images/logo.svg' | url }}" alt="Logo">
-        </a>
-    </nav>
-
-    <ul class="topbar__actions" aria-label="Aktionen">
-        <li class="topbar__actions-item">
-            <a href="#" class="topbar__actions-link" aria-label="Search" role="button" tabindex="0">
-                <span class="topbar__actions-text">Search</span>
-                <toujou-icon icon-name="search" icon-color="font" icon-size="xl" class="icon"></toujou-icon>
-            </a>
-        </li>
-        <li class="topbar__actions-item">
-            <a href="#" class="topbar__actions-link" aria-label="Contact" role="button" tabindex="0">
-                <span class="topbar__actions-text">Contact</span>
-                <toujou-icon icon-name="email" icon-color="font" icon-size="xl" class="icon"></toujou-icon>
-            </a>
-        </li>
-    </ul>
-
-    <toujou-burger-button class="burger-button" role="button" aria-pressed="false" aria-haspopup="true" aria-controls="mainNavigation" aria-expanded="false" aria-label="Menu button" toggle-element-selector="#topbar" tabindex="0"><template shadowrootmode="open"><!---->
-            <slot name="content"></slot></template>
-        <span class="burger-button__line" line-position="top" aria-hidden="true" slot="content"></span>
-        <span class="burger-button__line" line-position="middle" aria-hidden="true" slot="content"></span>
-        <span class="burger-button__line" line-position="bottom" aria-hidden="true" slot="content"></span>
-    </toujou-burger-button>
-
-    <nav class="language-picker" aria-label="Sprachauswahl">
-        <ul class="language-picker__list">
-            <li class="language-picker__item">
-                <a href="#" class="language-picker__link" lang="de" hreflang="de-DE" aria-label="Deutsch" aria-current="true">
-                    <span class="language-picker__iso-code">DE</span>
-                </a>
-            </li>
-            <li class="language-picker__item">
-                <a href="#" class="language-picker__link" lang="en" hreflang="en-US" aria-label="English">
-                    <span class="language-picker__iso-code">EN</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <nav id="mainNavigation" class="main-nav" aria-label="Main navigation">
-        <ul class="main-nav__list" data-nav-list-level="1">
-            <li class="main-nav__list-item" page-uid="500" data-nav-item-level="1" page-designation="">
-                <a page-uid="500" class="main-nav__link main-nav__link--500-page-uid" href="#">
-                    <span class="main-nav__text" id="label_500">Flexibilität</span>
-                </a>
-            </li>
-            <li class="main-nav__list-item" page-uid="501" data-nav-item-level="1" page-designation="">
-                <a page-uid="501" class="main-nav__link main-nav__link--501-page-uid" href="#">
-                    <span class="main-nav__text" id="label_501">Barrierefreiheit</span>
-                </a>
-            </li>
-            <li class="main-nav__list-item" page-uid="502" data-nav-item-level="1" page-designation="">
-                <a page-uid="502" class="main-nav__link main-nav__link--502-page-uid" href="#">
-                    <span class="main-nav__text" id="label_502">Performance</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <nav class="service-nav" aria-label="Service navigation">
-        <a page-designation="" class="service-nav__link" href="#">
-            Kontakt
-        </a>
-        <a page-designation="" class="service-nav__link" href="#">
-            Impressum
-        </a>
-        <a page-designation="" class="service-nav__link" href="#">
-            Datenschutz
-        </a>
-        <a page-designation="" class="service-nav__link" href="#">
-            Barrierefreiheitserklärung
-        </a>
-    </nav>
+    {% include "partials/topbar-logo.njk" %}
+    {% include "partials/topbar-actions.njk" %}
+    {% include "partials/burger-button.njk" %}
+    {% include "partials/language-picker.njk" %}
+    {% include "partials/main-nav.njk" %}
+    {% include "partials/service-nav.njk" %}
 </toujou-topbar>

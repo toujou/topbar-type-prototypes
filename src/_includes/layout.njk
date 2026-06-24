@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or "Prototype" }}</title>
     <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+    <script src="{{ '/js/scripts.js' | url }}" type="module" defer></script>
 </head>
 <body>
 
-    {% if not hideTopbar %}
-        {% include "partials/topbar.njk" %}
-    {% endif %}
-    {% include "partials/header.njk" %}
+    {% include "partials/topbar.njk" %}
     {% include "partials/main.njk" %}
 
-    <script src="{{ '/js/script.js' | url }}"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 .topbar[topbar-type="burger-button"] {
     --topbar-logo-width: 160px;
+    --topbar-height: 104px;
 
     display: grid;
     grid-template-columns: auto 1fr auto auto;
@@ -14,6 +15,7 @@
     top: 0;
     z-index: var(--z-index-topbar);
     background-color: var(--color-bg);
+    height: var(--topbar-height);
 
     .topbar__title {
         display: none;

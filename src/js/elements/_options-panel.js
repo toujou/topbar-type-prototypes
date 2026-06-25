@@ -2,6 +2,8 @@
  * Controls the options panel: listens for radio button changes
  * and reflects the selected values onto the topbar attributes.
  * Selections are persisted to localStorage and restored on page load.
+ * Navigation type options are filtered/disabled based on which ones
+ * are compatible with the currently selected topbar type.
  */
 class OptionsPanel {
     /** @type {string} localStorage key used to persist the panel's state */
@@ -25,13 +27,18 @@ class OptionsPanel {
     /** @type {HTMLElement|null} The main-nav element this panel controls */
     #mainNav;
 
+    /** @type {Array<{id: string, label: string, compatibleTopbarTypes?: string[]|null}>} */
+    #navigationTypes;
+
     /**
      * @param {HTMLElement} el - The root element of the options panel
+     * @param {Array<{id: string, label: string, compatibleTopbarTypes?: string[]|null}>} navigationTypes
      */
-    constructor(el) {
+    constructor(el, navigationTypes = []) {
         this.el = el;
         this.#selectedTopbarType = null;
         this.#selectedNavigationType = null;
+        this.#navigationTypes = navigationTypes;
 
         this.#init();
     }
@@ -78,13 +85,17 @@ class OptionsPanel {
             }
         }
 
-        if (storedState?.navigationType) {
+        this.#updateNavigationTypeAvailability();
+
+        if (storedState?.navigationType && this.#isNavigationTypeCompatible(storedState.navigationType)) {
             this.#selectedNavigationType = storedState.navigationType;
             this.#checkInput(this.#navigationTypeInputs, storedState.navigationType);
         } else {
             const checkedNavigationTypeOption = this.el.querySelector('input[name="navigation-type"]:checked');
-            if (checkedNavigationTypeOption) {
+            if (checkedNavigationTypeOption && !checkedNavigationTypeOption.disabled) {
                 this.#selectedNavigationType = checkedNavigationTypeOption.value;
+            } else {
+                this.#selectFirstAvailableNavigationType();
             }
         }
 
@@ -100,6 +111,72 @@ class OptionsPanel {
         inputs.forEach((input) => {
             input.checked = input.value === value;
         });
+    };
+
+    /**
+     * Returns whether a given navigation type id is compatible with the
+     * currently selected topbar type.
+     * @param {string} navigationTypeId
+     * @returns {boolean}
+     */
+    #isNavigationTypeCompatible = (navigationTypeId) => {
+        const navType = this.#navigationTypes.find((type) => type.id === navigationTypeId);
+        if (!navType?.compatibleTopbarTypes) return true; // no restriction = always compatible
+        return navType.compatibleTopbarTypes.includes(this.#selectedTopbarType);
+    };
+
+    /**
+     * Disables (and visually marks) navigation type radio inputs that
+     * aren't compatible with the currently selected topbar type.
+     */
+    #updateNavigationTypeAvailability = () => {
+        this.#navigationTypeInputs.forEach((input) => {
+            const isCompatible = this.#isNavigationTypeCompatible(input.value);
+            input.disabled = !isCompatible;
+            input.closest('.options-panel__option')?.classList.toggle('options-panel__option--disabled', !isCompatible);
+        });
+    };
+
+    /**
+     * Selects the first available (non-disabled) navigation type input,
+     * used as a fallback when the current selection becomes incompatible.
+     */
+    #selectFirstAvailableNavigationType = () => {
+        const firstAvailable = [...this.#navigationTypeInputs].find((input) => !input.disabled);
+        if (firstAvailable) {
+            firstAvailable.checked = true;
+            this.#selectedNavigationType = firstAvailable.value;
+        }
+    };
+
+    /**
+     * Handles a topbarType radio change event: updates the selected type,
+     * refreshes which navigation types are compatible, falls back to a
+     * compatible navigation type if the current one no longer qualifies,
+     * re-renders the UI, and persists the new state.
+     * @param {Event} event
+     */
+    #onTopbarTypeChange = (event) => {
+        this.#selectedTopbarType = event.target.value;
+        this.#updateNavigationTypeAvailability();
+
+        if (!this.#isNavigationTypeCompatible(this.#selectedNavigationType)) {
+            this.#selectFirstAvailableNavigationType();
+        }
+
+        this.#updateUI();
+        this.#saveState();
+    };
+
+    /**
+     * Handles a navigationType radio change event by updating the selected
+     * type, re-rendering the UI, and persisting the new state.
+     * @param {Event} event
+     */
+    #onNavigationTypeChange = (event) => {
+        this.#selectedNavigationType = event.target.value;
+        this.#updateUI();
+        this.#saveState();
     };
 
     /**
@@ -134,28 +211,6 @@ class OptionsPanel {
     };
 
     /**
-     * Handles a topbarType radio change event by updating the selected
-     * type, re-rendering the UI, and persisting the new state.
-     * @param {Event} event
-     */
-    #onTopbarTypeChange = (event) => {
-        this.#selectedTopbarType = event.target.value;
-        this.#updateUI();
-        this.#saveState();
-    };
-
-    /**
-     * Handles a navigationType radio change event by updating the selected
-     * type, re-rendering the UI, and persisting the new state.
-     * @param {Event} event
-     */
-    #onNavigationTypeChange = (event) => {
-        this.#selectedNavigationType = event.target.value;
-        this.#updateUI();
-        this.#saveState();
-    };
-
-    /**
      * Updates the UI by setting the correct attribute values on the topbar
      * and main navigation elements.
      */
@@ -171,10 +226,11 @@ class OptionsPanel {
 
 /**
  * Initializes the options panel if one exists on the page.
+ * @param {Array<{id: string, label: string, compatibleTopbarTypes?: string[]|null}>} navigationTypes
  */
-export function initOptionsPanel() {
+export function initOptionsPanel(navigationTypes = []) {
     const optionPanelEl = document.querySelector('.options-panel');
     if (optionPanelEl) {
-        new OptionsPanel(optionPanelEl);
+        new OptionsPanel(optionPanelEl, navigationTypes);
     }
 }

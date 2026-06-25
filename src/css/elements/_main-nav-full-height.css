@@ -1,0 +1,26 @@
+.main-nav[main-nav-type="full-height"] {
+    position: fixed;
+    height: calc(100dvh - var(--topbar-height));
+    width: 100dvw;
+    top: var(--topbar-height);
+    left: 0;
+    background-color: var(--color-primary);
+    padding: var(--spacing-xxxl) var(--spacing-xl);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+
+    .topbar[open-nav] & {
+        display: flex;
+    }
+
+    .main-nav__chevron .icon {
+        --icon-size: var(--font-size-xxxl);
+
+        background-color: var(--color-bg);
+    }
+
+    .main-nav__link:is(:hover, :focus-visible) {
+        color: var(--color-primary-dark) !important;
+    }
+}

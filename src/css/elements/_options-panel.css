@@ -39,3 +39,8 @@
 .options-panel__label:is(:hover, :focus-visible) {
     color: var(--color-primary);
 }
+
+.options-panel__label:has(.options-panel__input[disabled]) {
+    pointer-events: none;
+    opacity: .25;
+}

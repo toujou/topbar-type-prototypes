@@ -39,6 +39,11 @@
     --topbar-action-bar-height: var(--spacing-l);
 }
 
+:root:has(.topbar[topbar-type="vertical"]) {
+    --topbar-logo-width: 160px;
+    --topbar-width: 320px;
+}
+
 @media screen and (min-width: 840px) {
     :root,
     ::before,

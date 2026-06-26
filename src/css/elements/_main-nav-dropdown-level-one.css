@@ -7,6 +7,12 @@
         padding: 0;
     }
 
+    .topbar[topbar-type="vertical"] & .main-nav__list[data-nav-list-level="1"] {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--spacing-normal);
+    }
+
     .main-nav__list-item[data-nav-item-level="1"] {
         display: grid;
         grid-template-columns: 1fr;
@@ -21,5 +27,9 @@
 
     .main-nav__link {
         text-decoration: none;
+    }
+
+    .topbar[topbar-type="vertical"] & .main-nav__list-item[data-nav-item-level="1"] > .main-nav__link {
+        font-size: var(--font-size-ms);
     }
 }

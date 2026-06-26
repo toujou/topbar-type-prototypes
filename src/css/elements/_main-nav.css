@@ -16,6 +16,10 @@
     justify-self: flex-end;
 }
 
+.topbar[topbar-type="vertical"] .main-nav {
+    align-self: flex-start;
+}
+
 .main-nav__list {
     list-style: none;
 }

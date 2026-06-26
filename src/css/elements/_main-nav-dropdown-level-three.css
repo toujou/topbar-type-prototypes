@@ -10,6 +10,10 @@
         background-color: var(--color-bg);
     }
 
+    .topbar[topbar-type="vertical"] & .main-nav__list[data-nav-list-level="3"] {
+        padding: var(--spacing-s) 0 0 var(--spacing-normal);
+    }
+
     .main-nav__list-item[data-nav-item-level="2"][data-is-open] > .main-nav__list[data-nav-list-level="3"] {
         display: grid;
     }

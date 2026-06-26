@@ -1,0 +1,57 @@
+.topbar[topbar-type="vertical"] {
+    --topbar-logo-width: 160px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "logo"
+        "languagepicker"
+        "mainnav"
+        "actions";
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-l);
+    box-shadow: var(--shadow-s);
+    position: relative;
+    width: var(--topbar-width);
+    height: 100vh;
+    z-index: var(--z-index-topbar);
+    background-color: var(--color-bg);
+
+    .topbar__title {
+        display: none;
+    }
+
+    .topbar__logo-link {
+        grid-area: logo;
+    }
+
+    .topbar__logo {
+        max-width: var(--topbar-logo-width);
+    }
+
+    .topbar__actions {
+        grid-area: actions;
+        flex-direction: column;
+    }
+
+    .topbar__actions-link {
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        gap: var(--spacing-normal);
+        align-items: center;
+        justify-content: flex-end;
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    .topbar__actions-link .icon {
+        --icon-color: var(--color-primary);
+        --icon-size: var(--font-size-m);
+    }
+
+    .topbar__actions {
+        grid-area: actions;
+    }
+}

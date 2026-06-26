@@ -1,3 +1,8 @@
 body:has(.topbar) {
     background-color: var(--color-dummy-content-bg);
 }
+
+body:has(.topbar[topbar-type="vertical"]) {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+}

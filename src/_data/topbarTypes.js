@@ -16,6 +16,10 @@ module.exports = [
         label: 'Extra actions bar',
     },
     {
+        id: 'vertical',
+        label: 'Vertical',
+    },
+    {
         id: 'burger-button',
         label: 'Burger button',
     },

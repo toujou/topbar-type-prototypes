@@ -7,6 +7,16 @@
     display: none;
 }
 
+.topbar[topbar-type="extra-actions-bar"] .language-picker {
+    background-color: var(--color-primary);
+    padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing-s);
+    height: var(--topbar-action-bar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: var(--spacing-l);
+}
+
 .language-picker__list {
     list-style: none;
     display: flex;
@@ -21,3 +31,8 @@
     text-decoration: none;
     line-height: 1;
 }
+
+.topbar[topbar-type="extra-actions-bar"] .language-picker__link {
+    color: var(--color-bg);
+}
+

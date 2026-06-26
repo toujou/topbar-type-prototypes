@@ -9,10 +9,14 @@
 
     .main-nav__list-item[data-nav-item-level="1"] {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr;
         align-items: center;
         gap: var(--spacing-s);
         position: relative;
+    }
+
+    .main-nav__list-item[data-nav-item-level="1"]:has( > .main-nav__chevron) {
+        grid-template-columns: 1fr auto;
     }
 
     .main-nav__link {

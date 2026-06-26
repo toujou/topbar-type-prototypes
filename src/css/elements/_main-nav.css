@@ -11,6 +11,11 @@
     width: fit-content;
 }
 
+.topbar[topbar-type="extra-actions-bar"] .main-nav {
+    padding: var(--spacing-l);
+    justify-self: flex-end;
+}
+
 .main-nav__list {
     list-style: none;
 }

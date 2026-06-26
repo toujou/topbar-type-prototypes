@@ -34,6 +34,7 @@
 @import url("./elements/_type.css");
 
 /* TOPBAR */
+@import url("./elements/_topbar-extra-actions-bar.css");
 @import url("./elements/_topbar-logo-on-top.css");
 @import url("./elements/_topbar-single-line.css");
 @import url("./elements/_topbar-split.css");

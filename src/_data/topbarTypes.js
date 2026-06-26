@@ -12,6 +12,10 @@ module.exports = [
         label: 'Split',
     },
     {
+        id: 'extra-actions-bar',
+        label: 'Extra actions bar',
+    },
+    {
         id: 'burger-button',
         label: 'Burger button',
     },

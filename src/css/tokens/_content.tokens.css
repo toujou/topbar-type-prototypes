@@ -34,6 +34,11 @@
     --topbar-height: var(--topbar-height-large);
 }
 
+:root:has(.topbar[topbar-type="extra-actions-bar"]) {
+    --topbar-logo-width: 240px;
+    --topbar-action-bar-height: var(--spacing-l);
+}
+
 @media screen and (min-width: 840px) {
     :root,
     ::before,

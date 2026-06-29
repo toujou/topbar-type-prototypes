@@ -1,0 +1,17 @@
+.current-breakpoint {
+    font-size: var(--font-size-ms);
+    font-weight: var(--font-weight-text-bold);
+}
+
+.current-breakpoint__name {
+    color: var(--color-secondary);
+    display: none;
+}
+
+html[data-current-breakpoint="mobile"] .current-breakpoint__name--mobile {
+    display: inline;
+}
+
+html[data-current-breakpoint="desktop"] .current-breakpoint__name--desktop {
+    display: inline;
+}

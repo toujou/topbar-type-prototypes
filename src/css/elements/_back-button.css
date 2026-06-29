@@ -1,0 +1,12 @@
+.back-button {
+    font-size: var(--font-size-ms);
+    color: var(--color-primary);
+    font-family: var(--font-family-text), sans-serif;
+    text-decoration: none;
+    margin-bottom: var(--spacing-l);
+    display: block;
+}
+
+.button:is(:hover, :focus-visible) {
+    color: var(--color-primary-dark);
+}

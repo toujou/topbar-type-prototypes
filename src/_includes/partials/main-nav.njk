@@ -16,6 +16,15 @@
     </ul>
 {% endmacro %}
 
-<nav id="mainNavigation" class="main-nav" aria-label="Main navigation" main-nav-type="dropdown">
+<nav id="mainNavigation"
+     class="main-nav"
+     aria-label="Main navigation"
+     main-nav-type="{{ navigationType or scenario.mobile.navigationType }}"
+    {% if scenario %}
+        data-breakpoint-attribute="main-nav-type"
+        data-breakpoint-mobile-value="{{ scenario.mobile.navigationType }}"
+        data-breakpoint-desktop-value="{{ scenario.desktop.navigationType }}"
+    {% endif %}
+>
     {{ renderNavList(mainNav, 1) }}
 </nav>

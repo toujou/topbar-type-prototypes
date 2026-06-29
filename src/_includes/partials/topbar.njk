@@ -1,10 +1,15 @@
 <toujou-topbar
-    id="topbar"
-    class="topbar"
-    role="region"
-    aria-label="topbar"
-    logo-size="medium"
-    topbar-type="{{ topbarType }}"
+        id="topbar"
+        class="topbar"
+        role="region"
+        aria-label="topbar"
+        logo-size="medium"
+        topbar-type="{{ topbarType or scenario.mobile.topbarType }}"
+        {% if scenario %}
+            data-breakpoint-attribute="topbar-type"
+            data-breakpoint-mobile-value="{{ scenario.mobile.topbarType }}"
+            data-breakpoint-desktop-value="{{ scenario.desktop.topbarType }}"
+        {% endif %}
 >
     {% include "partials/topbar-logo.njk" %}
     {% include "partials/topbar-actions.njk" %}

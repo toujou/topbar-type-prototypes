@@ -1,0 +1,26 @@
+---
+layout: layouts/tests.njk
+pagination:
+    data: testScenarios
+    size: 1
+    alias: scenario
+permalink: "/test-pages/{{ scenario.id }}/"
+title: "{{ scenario.title }}"
+eleventyComputed:
+    breakpoint: "{{ scenario.breakpoint }}"
+    mobileTopbarType: "{{ scenario.mobile.topbarType }}"
+    mobileNavigationType: "{{ scenario.mobile.navigationType }}"
+    desktopTopbarType: "{{ scenario.desktop.topbarType }}"
+    desktopNavigationType: "{{ scenario.desktop.navigationType }}"
+---
+
+<h1>{{ scenario.title }}</h1>
+<p>{{ scenario.description }}</p>
+
+<h2>Mobile</h2>
+<p>Topbar: <strong>{{ scenario.mobile.topbarType }}</strong> | Main Nav: <strong>{{ scenario.desktop.navigationType }}</strong></p>
+
+<h2>Desktop</h2>
+<p>Topbar: <strong>{{ scenario.desktop.topbarType }}</strong> | Main Nav: <strong>{{ scenario.desktop.navigationType }}</strong></p>
+
+<breakpoint-controller breakpoint="{{ scenario.breakpoint }}"></breakpoint-controller>

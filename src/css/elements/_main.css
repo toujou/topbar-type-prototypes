@@ -3,5 +3,5 @@
     max-width: var(--content-max-width);
     margin: 0 auto;
     z-index: var(--z-index-content);
-    padding-block: var(--spacing-xxl);
+    padding-block: var(--spacing-xxxl);
 }

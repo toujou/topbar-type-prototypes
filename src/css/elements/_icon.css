@@ -111,6 +111,10 @@
 }
 
 /* ICON IMAGES */
+.icon[icon-name="arrow-top-right"] {
+    mask-image: var(--icon-arrow-top-right);
+}
+
 .icon[icon-name="chevron-down"] {
     mask-image: var(--icon-chevron-down);
 }

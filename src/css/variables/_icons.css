@@ -1,4 +1,5 @@
 :root {
+    --icon-arrow-top-right: url('../../assets/images/icons/arrow-top-right.svg');
     --icon-chevron-down: url('../../assets/images/icons/chevron-down.svg');
     --icon-email: url('../../assets/images/icons/email.svg');
     --icon-search: url('../../assets/images/icons/search.svg');

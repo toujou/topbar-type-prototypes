@@ -1,0 +1,29 @@
+<h2>Test Scenarios</h2>
+
+<ul class="scenarios-list">
+    {% for scenario in testScenarios %}
+        <li class="scenarios-list__item">
+            <a class="scenarios-list__link" href="{{ ('/test-pages/' + scenario.id + '/') | url }}">
+                <p class="scenarios-list__id">{{ scenario.id }}</p>
+                <h3 class="scenarios-list__title">{{ scenario.title }}</h3>
+                <p class="scenarios-list__description">{{ scenario.description }}</p>
+
+                <p class="scenarios-list__chips-list">
+                    <span class="scenarios-list__chips-list-label">Topbar Types:</span>
+                    <span class="chip scenarios-list__chip">{{ scenario.mobile.topbarType }}</span>
+                    <span class="chip scenarios-list__chip">{{ scenario.desktop.topbarType }}</span>
+                </p>
+
+                <p class="scenarios-list__chips-list">
+                    <span class="scenarios-list__chips-list-label">Navigation Types:</span>
+                    <span class="chip scenarios-list__chip">{{ scenario.mobile.navigationType }}</span>
+                    <span class="chip scenarios-list__chip">{{ scenario.desktop.navigationType }}</span>
+                </p>
+
+                <span class="scenarios-list__button" aria-hidden="true">
+                    <toujou-icon icon-name="arrow-top-right" icon-color="font-light" icon-size="m" class="icon"></toujou-icon>
+                </span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

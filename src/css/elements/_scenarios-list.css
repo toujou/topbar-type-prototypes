@@ -29,7 +29,7 @@
 }
 
 .scenarios-list__link:is(:hover, :focus-visible) {
-    border: 1px solid var(--color-primary-dark);
+    border: 1px solid var(--color-primary);
 }
 
 .scenarios-list__id {
@@ -89,7 +89,7 @@
 }
 
 .scenarios-list__link:is(:hover, :focus-visible) .scenarios-list__button {
-    border: 1px solid var(--color-primary-dark);
+    border: 1px solid var(--color-primary);
 }
 
 .scenarios-list__button .icon {
@@ -97,7 +97,7 @@
 }
 
 .scenarios-list__link:is(:hover, :focus-visible) .scenarios-list__button .icon {
-    --icon-color: var(--color-primary-dark);
+    --icon-color: var(--color-primary);
 }
 
 .scenarios-list__row {
@@ -110,6 +110,11 @@
 
 .scenarios-list__row:not(:last-child) {
     border-bottom: 1px solid var(--color-font-light);
+}
+
+.scenarios-list__row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .scenarios-list__header-item,

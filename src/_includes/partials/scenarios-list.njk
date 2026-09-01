@@ -8,17 +8,25 @@
                 <h3 class="scenarios-list__title">{{ scenario.title }}</h3>
                 <p class="scenarios-list__description">{{ scenario.description }}</p>
 
-                <p class="scenarios-list__chips-list">
-                    <span class="scenarios-list__chips-list-label">Topbar Types:</span>
-                    <span class="chip scenarios-list__chip">{{ scenario.mobile.topbarType }}</span>
-                    <span class="chip scenarios-list__chip">{{ scenario.desktop.topbarType }}</span>
-                </p>
+                <div class="scenarios-list__grid">
+                    <div class="scenarios-list__row scenarios-list__header">
+                        <span class="scenarios-list__header-item"></span>
+                        <span class="scenarios-list__header-item">Topbar type</span>
+                        <span class="scenarios-list__header-item">Nav type</span>
+                    </div>
 
-                <p class="scenarios-list__chips-list">
-                    <span class="scenarios-list__chips-list-label">Navigation Types:</span>
-                    <span class="chip scenarios-list__chip">{{ scenario.mobile.navigationType }}</span>
-                    <span class="chip scenarios-list__chip">{{ scenario.desktop.navigationType }}</span>
-                </p>
+                    <div class="scenarios-list__row">
+                        <span class="scenarios-list__row-title">Mobile</span>
+                        <span class="scenarios-list__row-item">{{ scenario.mobile.topbarType }}</span>
+                        <span class="scenarios-list__row-item">{{ scenario.mobile.navigationType }}</span>
+                    </div>
+
+                    <div class="scenarios-list__row">
+                        <span class="scenarios-list__row-title">Desktop</span>
+                        <span class="scenarios-list__row-item">{{ scenario.desktop.topbarType }}</span>
+                        <span class="scenarios-list__row-item">{{ scenario.desktop.navigationType }}</span>
+                    </div>
+                </div>
 
                 <span class="scenarios-list__button" aria-hidden="true">
                     <toujou-icon icon-name="arrow-top-right" icon-color="font-light" icon-size="m" class="icon"></toujou-icon>

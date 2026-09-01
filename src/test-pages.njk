@@ -5,8 +5,8 @@ pagination:
     size: 1
     alias: scenario
 permalink: "/test-pages/{{ scenario.id }}/"
-title: "{{ scenario.title }}"
 eleventyComputed:
+    title: "{{ scenario.title }}"
     breakpoint: "{{ scenario.breakpoint }}"
     mobileTopbarType: "{{ scenario.mobile.topbarType }}"
     mobileNavigationType: "{{ scenario.mobile.navigationType }}"

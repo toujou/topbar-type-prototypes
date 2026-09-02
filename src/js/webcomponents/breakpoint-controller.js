@@ -24,7 +24,6 @@ class BreakpointController extends HTMLElement {
 
         this.#mql.addEventListener('change', this.#handleChange);
         this.#applyState(this.#mql.matches);
-        console.log('HELLO - controller');
     }
 
     /**
@@ -48,7 +47,6 @@ class BreakpointController extends HTMLElement {
      * @param {boolean} isDesktop
      */
     #applyState = (isDesktop) => {
-        console.log('BREAKPOINT_CONTROLLER', isDesktop);
         const current = isDesktop ? 'desktop' : 'mobile';
 
         document.documentElement.setAttribute(BreakpointController.breakpointAttribute, current);

@@ -3,7 +3,8 @@
     width: fit-content;
 }
 
-.topbar[topbar-type="burger-button"] .language-picker {
+.topbar[topbar-type="logo-actions-burger"] .language-picker,
+.topbar[topbar-type="burger-logo-actions"] .language-picker {
     display: none;
 }
 

@@ -1,31 +1,46 @@
 module.exports = [
     {
         id: "scenario-a",
-        title: "Burger menu | single line",
-        description: "Render mobile topbar with the 'burger button' design and the 'full-height' navigation and the desktop 'single-line' topbar with the 'mega menu' navigation",
-        uses: "Corporate websites, service websites, institutions and content-heavy websites with a clear visual hierarchy and a larger navigation structure.",
-        goodFor: ['Corporate websites', 'Universities and educational institutions', 'Tourism websites', 'Large service websites', 'Content-heavy websites', 'Websites with complex navigation structures'],
+        title: "General-purpose websites",
+        description: "Render the mobile topbar with the logo on the left and the actions and burger button on the right, using a drawer navigation. On desktop, use the single-line topbar with dropdown navigation.",
+        uses: "A versatile, compact header pattern for websites with a clear navigation structure and a moderate number of actions.",
+        goodFor: [
+            'Corporate websites',
+            'Service websites',
+            'Universities and educational institutions',
+            'Content-focused websites',
+            'Small to medium-sized websites'
+        ],
         limitations: [
-            'Can become crowded with very large navigation structures',
-            'Additional actions have less visual prominence',
+            'Less suitable when the mobile navigation contains many items',
+            'Additional actions have limited space on smaller screens',
             'Less distinctive for strongly brand-focused websites'
         ],
         breakpoint: "1024",
         mobile: {
-            topbarType: "burger-button",
-            navigationType: "full-height"
+            topbarType: "logo-actions-burger",
+            navigationType: "drawer"
         },
         desktop: {
             topbarType: "single-line",
-            navigationType: "panel"
+            navigationType: "dropdown"
         }
     },
+
     {
         id: "scenario-b",
-        title: "Burger menu | actions bar",
-        description: "Render mobile topbar with the 'burger button' design and the 'full-height' navigation and the desktop 'extra-actions-bar' topbar with the 'dropdown' navigation",
-        uses: "Websites that need to highlight additional actions or utilities, such as contact options, booking, search, login or language selection.",
-        goodFor: ['Travel and tourism websites', 'Booking platforms', 'Hotels', 'E-commerce websites', 'Service companies', 'Websites with prominent CTAs', 'Websites with login, search, contact or booking actions'],
+        title: "Action-focused websites",
+        description: "Render the mobile topbar with the logo on the left and the actions and burger button on the right, using a full-height navigation. On desktop, use the extra-actions-bar topbar with dropdown navigation.",
+        uses: "Websites where important actions such as contact, booking, search, login or language selection need strong visibility alongside the main navigation.",
+        goodFor: [
+            'Travel and tourism websites',
+            'Booking platforms',
+            'Hotels',
+            'E-commerce websites',
+            'Service companies',
+            'Websites with prominent CTAs',
+            'Websites with login, search, contact or booking actions'
+        ],
         limitations: [
             'Requires enough horizontal space for the additional actions',
             'Can feel visually busy when many actions are included',
@@ -33,7 +48,7 @@ module.exports = [
         ],
         breakpoint: "1024",
         mobile: {
-            topbarType: "burger-button",
+            topbarType: "logo-actions-burger",
             navigationType: "full-height"
         },
         desktop: {
@@ -41,41 +56,59 @@ module.exports = [
             navigationType: "dropdown"
         }
     },
+
     {
         id: "scenario-c",
-        title: "Burger menu | logo on top",
-        description: "Render mobile topbar with the 'burger button' design and the 'full-height' navigation and the desktop 'logo on top' topbar with the 'panel' navigation",
-        uses: "Brand-focused websites, cultural institutions and editorial websites where the logo or brand identity should have a stronger visual presence.",
-        goodFor: ['Cultural institutions', 'Museums', 'Hotels and resorts', 'Tourism brands', 'Editorial websites', 'Premium brands', 'Organisations with a string visual identity'],
+        title: "Brand-focused websites",
+        description: "Render the mobile topbar with the burger button on the left, a centered logo and actions on the right, using a drawer navigation. On desktop, use the logo-on-top topbar with panel navigation.",
+        uses: "Brand-focused websites where the logo should remain a strong, central element while the navigation stays compact on mobile.",
+        goodFor: [
+            'Cultural institutions',
+            'Museums',
+            'Hotels and resorts',
+            'Tourism brands',
+            'Editorial websites',
+            'Premium brands',
+            'Organisations with a strong visual identity'
+        ],
         limitations: [
-            'Requires more vertical space than a single-line topbar',
-            'Less suitable when navigation and actions need to remain very compact',
+            'Requires a logo that works well in a centered position',
+            'Less suitable when many actions need to be displayed on mobile',
             'The larger branding area may be unnecessary for simple websites'
         ],
         breakpoint: "1024",
         mobile: {
-            topbarType: "burger-button",
-            navigationType: "full-height"
+            topbarType: "burger-logo-actions",
+            navigationType: "drawer"
         },
         desktop: {
             topbarType: "logo-on-top",
             navigationType: "panel"
         }
     },
+
     {
         id: "scenario-d",
-        title: "Burger menu | split",
-        description: "Render mobile topbar with the 'burger button' design and the 'full-height' navigation and the desktop 'split' topbar with the 'dropdown' navigation",
-        uses: "Websites with a small to medium-sized navigation that benefit from a balanced, symmetrical header layout with the brand as a central visual element.",
-        goodFor: ['Boutique business', 'Restaurants', 'Hotels', 'Creative agencies', 'Portfolio websites', 'Lifestyle brands', 'Smaller corporate websites'],
+        title: "Balanced websites",
+        description: "Render the mobile topbar with the burger button on the left, a centered logo and actions on the right, using a full-height navigation. On desktop, use the split topbar with dropdown navigation.",
+        uses: "Websites that want a distinctive, balanced header with a strong brand presence and a more prominent mobile navigation experience.",
+        goodFor: [
+            'Boutique businesses',
+            'Restaurants',
+            'Hotels',
+            'Creative agencies',
+            'Portfolio websites',
+            'Lifestyle brands',
+            'Smaller corporate websites'
+        ],
         limitations: [
-            'Works best with a small to medium-sized navigation',
-            'Can become unbalanced when there are many navigation items or actions',
-            'Less suitable for websites with complex navigation structures'
+            'Works best with a small to medium-sized number of actions',
+            'Can become visually busy with many navigation or action items',
+            'Less suitable for websites with very complex navigation structures'
         ],
         breakpoint: "1024",
         mobile: {
-            topbarType: "burger-button",
+            topbarType: "burger-logo-actions",
             navigationType: "full-height"
         },
         desktop: {
@@ -83,25 +116,64 @@ module.exports = [
             navigationType: "dropdown"
         }
     },
+
     {
         id: "scenario-e",
-        title: "Burger menu | bubbles",
-        description: "Render mobile topbar with the 'burger button' design and the 'full-height' navigation and the desktop 'bubbles' topbar with the 'dropdown' navigation",
-        uses: "Modern, playful and brand-driven websites that want to give navigation, actions and language selection equal visual prominence.",
-        goodFor: ['Tourism and travel websites', 'Lifestyle brands', 'Creative agencies', 'Children or family-oriented websites', 'Modern startups', 'Hospitality websites', 'Campaign and marketing websites', 'Brands with a playful visual identify'],
+        title: "Playful and modern websites",
+        description: "Render the mobile topbar with the logo on the left and the actions and burger button on the right, using a drawer navigation. On desktop, use the bubbles topbar with dropdown navigation.",
+        uses: "Modern, playful and brand-driven websites that want to give navigation, actions and language selection strong visual prominence.",
+        goodFor: [
+            'Tourism and travel websites',
+            'Lifestyle brands',
+            'Creative agencies',
+            'Children or family-oriented websites',
+            'Modern startups',
+            'Hospitality websites',
+            'Campaign and marketing websites',
+            'Brands with a playful visual identity'
+        ],
         limitations: [
             'The playful visual style may not suit conservative or highly formal brands',
-            'Can become visually busy when many actions or navigation items are present',
+            'Can become visually busy when many actions are present',
             'Requires careful visual hierarchy to avoid competing elements'
         ],
         breakpoint: "1024",
         mobile: {
-            topbarType: "burger-button",
-            navigationType: "full-height"
+            topbarType: "logo-actions-burger",
+            navigationType: "drawer"
         },
         desktop: {
             topbarType: "bubbles",
             navigationType: "dropdown"
+        }
+    },
+
+    {
+        id: "scenario-f",
+        title: "Complex content websites",
+        description: "Render the mobile topbar with the burger button on the left, a centered logo and actions on the right, using a drawer navigation. On desktop, use the single-line topbar with panel navigation.",
+        uses: "Websites with a strong brand presence and a larger or more complex navigation structure that benefits from a spacious desktop navigation panel.",
+        goodFor: [
+            'Corporate websites',
+            'Universities and educational institutions',
+            'Cultural institutions',
+            'Large organisations',
+            'Content-heavy websites',
+            'Websites with complex navigation structures'
+        ],
+        limitations: [
+            'The centered mobile logo leaves less room for additional actions',
+            'Panel navigation requires more screen space than a dropdown',
+            'May be unnecessarily elaborate for smaller websites'
+        ],
+        breakpoint: "1024",
+        mobile: {
+            topbarType: "burger-logo-actions",
+            navigationType: "drawer"
+        },
+        desktop: {
+            topbarType: "single-line",
+            navigationType: "panel"
         }
     }
 ];

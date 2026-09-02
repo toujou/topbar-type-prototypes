@@ -12,6 +12,11 @@ module.exports = [
     {
         id: 'full-height',
         label: 'Full height',
-        compatibleTopbarTypes: ['burger-button'],
+        compatibleTopbarTypes: ['logo-actions-burger', 'burger-logo-actions'],
+    },
+    {
+        id: 'drawer',
+        label: 'Drawer',
+        compatibleTopbarTypes: ['logo-actions-burger', 'burger-logo-actions'],
     },
 ];

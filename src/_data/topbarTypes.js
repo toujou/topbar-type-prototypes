@@ -20,8 +20,12 @@ module.exports = [
         label: 'Vertical',
     },
     {
-        id: 'burger-button',
-        label: 'Burger button',
+        id: 'logo-actions-burger',
+        label: 'Logo - Actions - Burger',
+    },
+    {
+        id: 'burger-logo-actions',
+        label: 'Burger - Logo - Actions',
     },
     {
         id: 'bottom-actions-bar',

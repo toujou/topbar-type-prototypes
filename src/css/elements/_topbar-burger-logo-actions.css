@@ -1,12 +1,12 @@
-.topbar[topbar-type="burger-button"] {
+.topbar[topbar-type="burger-logo-actions"] {
     --topbar-logo-width: 160px;
     --topbar-height: 104px;
 
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
     grid-template-rows: auto ;
     grid-template-areas:
-        "logo . actions burgerbutton";
+        "burgerbutton logo actions";
     align-items: center;
     gap: var(--spacing-l);
     padding: var(--spacing-l);

@@ -1,9 +1,9 @@
-.topbar[topbar-type="logo-on-top"] .burger-button,
-.topbar[topbar-type="single-line"] .burger-button {
+.topbar .burger-button {
     display: none;
 }
 
-.topbar[topbar-type="burger-button"] .burger-button {
+.topbar[topbar-type="logo-actions-burger"] .burger-button,
+.topbar[topbar-type="burger-logo-actions"] .burger-button {
     display: flex;
 }
 

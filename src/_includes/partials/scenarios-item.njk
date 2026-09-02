@@ -2,35 +2,7 @@
     <a class="scenarios-item__link" href="{{ ('/test-pages/' + scenario.id + '/') | url }}">
         <p class="scenarios-item__id">{{ scenario.id }}</p>
         <h3 class="scenarios-item__title">{{ scenario.title }}</h3>
-        <p class="scenarios-item__description">{{ scenario.description }}</p>
 
-        <div class="scenarios-item__grid">
-            <div class="scenarios-item__row scenarios-item__header">
-                <span class="scenarios-item__header-item"></span>
-                <span class="scenarios-item__header-item">Topbar type</span>
-                <span class="scenarios-item__header-item">Nav type</span>
-            </div>
-
-            <div class="scenarios-item__row">
-                <span class="scenarios-item__row-title">Mobile</span>
-                <span class="scenarios-item__row-item">{{ scenario.mobile.topbarType }}</span>
-                <span class="scenarios-item__row-item">{{ scenario.mobile.navigationType }}</span>
-            </div>
-
-            <div class="scenarios-item__row">
-                <span class="scenarios-item__row-title">Desktop</span>
-                <span class="scenarios-item__row-item">{{ scenario.desktop.topbarType }}</span>
-                <span class="scenarios-item__row-item">{{ scenario.desktop.navigationType }}</span>
-            </div>
-        </div>
-
-        <span class="scenarios-item__button" aria-hidden="true">
-            <toujou-icon
-                icon-name="arrow-top-right"
-                icon-color="font-light"
-                icon-size="m"
-                class="icon"
-            ></toujou-icon>
-        </span>
+        {% include "partials/config-grid.njk" %}
     </a>
 </li>

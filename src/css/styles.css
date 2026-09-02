@@ -26,6 +26,7 @@
 @import url("./elements/_body.css");
 @import url("./elements/_burger-button.css");
 @import url("./elements/_chip.css");
+@import url("./elements/_config-grid.css");
 @import url("./elements/_current-breakpoint.css");
 @import url("./elements/_fonts.css");
 @import url("./elements/_icon.css");
@@ -39,6 +40,7 @@
 @import url("./elements/_type.css");
 
 /* TOPBAR */
+@import url("./elements/_topbar-bubbles.css");
 @import url("./elements/_topbar-extra-actions-bar.css");
 @import url("./elements/_topbar-logo-on-top.css");
 @import url("./elements/_topbar-single-line.css");

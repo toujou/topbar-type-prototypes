@@ -26,5 +26,9 @@ module.exports = [
     {
         id: 'bottom-actions-bar',
         label: 'Bottom actions bar',
+    },
+    {
+        id: 'bubbles',
+        label: 'Bubbles',
     }
 ];

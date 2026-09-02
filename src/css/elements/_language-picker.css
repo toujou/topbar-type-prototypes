@@ -17,6 +17,12 @@
     padding-left: var(--spacing-l);
 }
 
+.topbar[topbar-type="bubbles"] .language-picker  {
+    background-color: var(--color-bg);
+    padding: var(--spacing-normal) var(--spacing-m);
+    border-radius: var(--border-radius-l);
+}
+
 .language-picker__list {
     list-style: none;
     display: flex;

@@ -2,8 +2,15 @@
     grid-area: mainnav;
 }
 
-.topbar[topbar-type="single-line"] .main-nav {
+.topbar[topbar-type="single-line"] .main-nav,
+.topbar[topbar-type="bubbles"] .main-nav {
     justify-self: flex-end;
+}
+
+.topbar[topbar-type="bubbles"] .main-nav {
+    background-color: var(--color-bg);
+    padding: var(--spacing-normal) var(--spacing-m);
+    border-radius: var(--border-radius-l);
 }
 
 .topbar[topbar-type="logo-on-top"] .main-nav {

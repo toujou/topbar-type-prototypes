@@ -17,10 +17,28 @@ eleventyComputed:
 <h1>{{ scenario.title }}</h1>
 <p>{{ scenario.description }}</p>
 
-<h2>Mobile</h2>
-<p>Topbar: <strong>{{ scenario.mobile.topbarType }}</strong> | Main Nav: <strong>{{ scenario.desktop.navigationType }}</strong></p>
+<h2>Uses</h2>
+<p>{{ scenario.uses }}</p>
 
-<h2>Desktop</h2>
-<p>Topbar: <strong>{{ scenario.desktop.topbarType }}</strong> | Main Nav: <strong>{{ scenario.desktop.navigationType }}</strong></p>
+<p><strong>Examples:</strong></p>
+<ul>
+    {% for use in scenario.goodFor %}
+        <li>{{ use }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Limitations</h3>
+
+<ul>
+    {% for limitation in scenario.limitations %}
+        <li>{{ limitation }}</li>
+    {% endfor %}
+</ul>
+
+
+<h2>Configuration</h2>
+<p>Breakpoint: <strong>{{ scenario.breakpoint }}px</strong></p>
+
+{% include "partials/config-grid.njk" %}
 
 <breakpoint-controller breakpoint="{{ scenario.breakpoint }}"></breakpoint-controller>
